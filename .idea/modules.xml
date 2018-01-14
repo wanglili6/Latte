@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Latte.iml" filepath="$PROJECT_DIR$/Latte.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/example.iml" filepath="$PROJECT_DIR$/example/example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/latter_annotations/latter_annotations.iml" filepath="$PROJECT_DIR$/latter_annotations/latter_annotations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/latter_complter/latter_complter.iml" filepath="$PROJECT_DIR$/latter_complter/latter_complter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/latter_core/latter_core.iml" filepath="$PROJECT_DIR$/latter_core/latter_core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/latter_ec/latter_ec.iml" filepath="$PROJECT_DIR$/latter_ec/latter_ec.iml" />
+    </modules>
+  </component>
+</project>
