@@ -1,7 +1,11 @@
 package app;
 
+import com.joanzapata.iconify.Icon;
+import com.joanzapata.iconify.IconFontDescriptor;
+import com.joanzapata.iconify.Iconify;
+
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.concurrent.ThreadFactory;
 
 /**
  * Created by wll on 2018/1/14.
@@ -12,6 +16,7 @@ import java.util.concurrent.ThreadFactory;
 
 public class Configurator {
     private static final HashMap<String, Object> LATTER_CONFIGSMAP = new HashMap<>();
+    private static final ArrayList<IconFontDescriptor> ICONSLIST = new ArrayList<>();
 
     /**
      * 配置文件,添加配置标识-----构造方法
@@ -23,12 +28,13 @@ public class Configurator {
     }
 
     /**
-     * 创建单例
+     * 创建单例---初始化
      *
      * @return
      */
     public static Configurator getInstance() {
         //创建单例模式
+        initIcons();
         return Holder.INSTANCE;
     }
 
@@ -77,7 +83,8 @@ public class Configurator {
     /**
      * 没有被检测
      * 在获取配置文件的调用
-     * @param key  初始化的配置 key
+     *
+     * @param key 初始化的配置 key
      * @param <T>
      * @return
      */
@@ -85,5 +92,26 @@ public class Configurator {
     final <T> T getCongfiguration(Enum<ConfigType> key) {
         checkConfigration();
         return (T) LATTER_CONFIGSMAP.get(key.name());
+    }
+
+    /**
+     * 初始化字体
+     */
+    private static void initIcons() {
+        if (ICONSLIST.size() > 0) {
+            final Iconify.IconifyInitializer initializer = Iconify.with(ICONSLIST.get(0));
+            for (int i = 1; i < ICONSLIST.size(); i++) {
+                initializer.with(ICONSLIST.get(i));
+            }
+        }
+    }
+
+    /**
+     * 添加自定义的字体
+     */
+
+    public Configurator withIcon(IconFontDescriptor icon) {
+        ICONSLIST.add(icon);
+        return this;
     }
 }
