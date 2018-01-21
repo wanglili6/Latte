@@ -2,10 +2,10 @@ package com.e_commerce.wll.latte;
 
 import android.app.Application;
 
+import com.Latter.latter_core.app.Latter;
 import com.example.latter.ec.icon.FontEcMode;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
 
-import app.Latter;
 
 /**
  * Created by wll on 2018/1/14.
